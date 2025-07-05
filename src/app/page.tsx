@@ -47,6 +47,15 @@ export default function LinktreeProfile() {
       shadowColor: "shadow-violet-500/30"
     },
     {
+      title: "Collab IDE",
+      url: "https://collab-ide.yashsuthar.com",
+      icon: <Code size={20} />,
+      description: "🚀 Real-time collaborative IDE platform",
+      gradient: "from-indigo-500 via-purple-500 to-pink-500",
+      shadowColor: "shadow-purple-500/40",
+      isPopular: true
+    },
+    {
       title: "GitHub",
       url: "https://github.com/yashsuthar00",
       icon: <Github size={20} />,
@@ -203,20 +212,41 @@ export default function LinktreeProfile() {
                 >
 
                   
+                  {/* Popular Badge */}
+                  {link.isPopular && (
+                    <div className="absolute -top-2 -right-2 z-10">
+                      <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xs font-bold px-2 py-1 rounded-full shadow-lg animate-pulse">
+                        ✨ Featured
+                      </div>
+                    </div>
+                  )}
+
                   {/* Link Card */}
-                  <div className="relative p-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl hover:bg-white/15 hover:border-white/30 transition-all duration-300 overflow-hidden group-hover:shadow-2xl">
+                  <div className={`relative p-4 backdrop-blur-xl border rounded-2xl transition-all duration-300 overflow-hidden group-hover:shadow-2xl ${
+                    link.isPopular 
+                      ? 'bg-white/15 border-white/30 shadow-lg shadow-purple-500/20' 
+                      : 'bg-white/10 border-white/20 hover:bg-white/15 hover:border-white/30'
+                  }`}>
                     
-                    {/* Gradient Overlay */}
-                    <div className={`absolute inset-0 bg-gradient-to-r ${link.gradient} opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl`} />
+                    {/* Enhanced Gradient Overlay for Popular Items */}
+                    <div className={`absolute inset-0 bg-gradient-to-r ${link.gradient} transition-opacity duration-300 rounded-2xl ${
+                      link.isPopular ? 'opacity-5 group-hover:opacity-15' : 'opacity-0 group-hover:opacity-10'
+                    }`} />
                     
-                    {/* Shimmer Effect */}
-                    <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/10 to-transparent skew-x-12" />
+                    {/* Enhanced Shimmer Effect */}
+                    <div className={`absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent to-transparent skew-x-12 ${
+                      link.isPopular ? 'via-white/20' : 'via-white/10'
+                    }`} />
                     
                     <div className="relative flex items-center justify-between">
                       <div className="flex items-center space-x-3 flex-1">
                         
                         {/* Icon */}
-                        <div className={`flex-shrink-0 p-2.5 bg-gradient-to-r ${link.gradient} rounded-xl shadow-lg ${link.shadowColor} group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}>
+                        <div className={`flex-shrink-0 p-2.5 bg-gradient-to-r ${link.gradient} rounded-xl shadow-lg ${link.shadowColor} group-hover:shadow-xl transition-all duration-300 ${
+                          link.isPopular 
+                            ? 'group-hover:scale-115 shadow-xl animate-pulse' 
+                            : 'group-hover:scale-110'
+                        }`}>
                           <div className="text-white">
                             {link.icon}
                           </div>
