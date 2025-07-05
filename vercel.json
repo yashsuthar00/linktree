@@ -1,0 +1,51 @@
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://links.yashsuthar.com/$1",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "linktree.yashsuthar.com"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "https://links.yashsuthar.com/$1",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "link.yashsuthar.com"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "destination": "https://links.yashsuthar.com/$1",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "info.yashsuthar.com"
+        }
+      ] 
+    },
+    {
+      "source": "/(.*)",
+      "destination": "https://links.yashsuthar.com/$1",
+      "permanent": true,
+      "has": [
+        {
+          "type": "host",
+          "value": "linktree-navy-seven.vercel.app"
+        }
+      ] 
+    }
+  ]
+}
