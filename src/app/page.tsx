@@ -80,6 +80,14 @@ export default function LinktreeProfile() {
       shadowColor: "shadow-orange-500/30"
     },
     {
+      title: "Codeforces",
+      url: "https://codeforces.com/profile/yashsuthar00",
+      icon: <Trophy size={20} />,
+      description: "Competitive programming on Codeforces",
+      gradient: "from-blue-600 to-indigo-700",
+      shadowColor: "shadow-blue-600/30"
+    },
+    {
       title: "HackerRank",
       url: "https://hackerrank.com/yashsuthar00",
       icon: <Trophy size={20} />,
